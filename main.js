@@ -12,6 +12,12 @@ const links = [
     href: "https://github.com/Dekxisosta",
   },
   {
+    icon: "https://static.vecteezy.com/system/resources/thumbnails/042/127/234/small/white-square-bordered-youtube-logo-on-transparent-background-free-png.png",
+    label: "Youtube",
+    sub: "youtube.com/Rroquxii",
+    href: "https://youtube.com/Rroquxii",
+  },
+  {
     icon: "https://play-lh.googleusercontent.com/X_tdMAC-1SnBCZpb2lN7WRzOpLA4-sjT_uG82OLLhlIyXF0DcjEuN7XxnZUoUh6BpGP1voWO7SjwY4coSKFKHg",
     label: "Art Commissions",
     sub: "2D art & chibi illustration",
