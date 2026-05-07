@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+@font-face {
+  font-family: 'ClarityCity-Black';
+  src: url('../assets/fonts/ClarityCity-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../assets/fonts/Roboto.ttf') format('truetype');
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: rgb(28, 25, 29);
+  --bg-dark: rgb(110, 88, 122);
+  --card: rgba(255, 255, 255, 0.18);
+  --card-hover: rgba(255, 255, 255, 0.30);
+  --border: rgba(255, 255, 255, 0.30);
+  --border-hover: rgba(255, 255, 255, 0.65);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(233, 183, 47, 0.6);
+  --accent: #c084d4;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3{
+  font-family: 'ClarityCity-Black', sans-serif;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.container-page {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px 64px;
+  min-height: 100vh;
+}
+
+.container-main {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 20px;
+  border: 2px dashed rgba(231, 138, 32, 0.233);
+  border-radius: 20px;
+  background-color: rgba(31, 27, 27, 0.795);
+  box-shadow: inset 0 2px 8px rgba(41, 39, 39, 0.5);
+
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 52px;
+}
+
+.header-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  border-radius: 14px;
+  background: url('https://w0.peakpx.com/wallpaper/793/922/HD-wallpaper-gold-and-black-minimalist.jpg') center/cover no-repeat;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+.avatar-wrap {
+  position: relative;
+  z-index: 1;
+  margin-top: 8px;
+}
+
+.avatar-wrap {
+  position: relative;
+  width: 88px;
+  height: 88px;
+}
+
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid var(--border-hover);
+  display: block;
+}
+
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-name {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.6s ease 0.1s forwards;
+}
+
+.hero-handle {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.6s ease 0.2s forwards;
+}
+
+.hero-bio {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-primary);
+  opacity: 0;
+  max-width: 320px;
+  line-height: 1.6;
+  transform: translateY(10px);
+  animation: fadeUp 0.6s ease 0.3s forwards;
+}
+
+/* ── CONTENT — link list ── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-decoration: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.18s ease,
+    box-shadow 0.2s ease;
+
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.link-card.visible {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.link-card:hover {
+  background: var(--card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(100, 60, 130, 0.18);
+}
+
+.link-card:active {
+  transform: translateY(0px);
+}
+
+.link-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.link-text {
+  flex: 1;
+}
+
+.link-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.link-sub {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+.link-arrow {
+  font-size: 20px;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.link-card:hover .link-arrow {
+  transform: translateX(5px);
+  color: var(--text-primary);
+}
+
+.profile-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+}
+
+.profile-link:hover {
+  background: var(--card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.profile-link-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.profile-link-label { white-space: nowrap; }
+
+.tab-panel {
+  background: rgba(71, 59, 59, 0.281);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: 14px 14px 0 0;
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: -20px;
+}
+
+.tab-dot {
+  width: 10px;
+  height: 10px;
+  background: rgb(65, 55, 55);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
