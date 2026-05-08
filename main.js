@@ -164,4 +164,87 @@ document.addEventListener("DOMContentLoaded", () => {
   buildHero();
   buildProfileLinks();
   buildLinks();
+  buildParticles();
 });
+
+function buildParticles() {
+  const canvas = document.createElement("canvas");
+  canvas.className = "particles";
+  document.body.appendChild(canvas);
+
+  const ctx = canvas.getContext("2d");
+
+  const resize = () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  };
+  resize();
+  window.addEventListener("resize", resize);
+
+  const particles = Array.from({ length: 40 }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    size: Math.random() * 20 + 8,
+    speedY: Math.random() * 0.6 + 0.2,
+    speedX: (Math.random() - 0.5) * 0.5,
+    rotation: Math.random() * Math.PI * 2,
+    rotationSpeed: (Math.random() - 0.5) * 0.02,
+    opacity: Math.random() * 0.5 + 0.2,
+    sway: Math.random() * Math.PI * 2,
+    swaySpeed: Math.random() * 0.01 + 0.005,
+  }));
+
+
+  function drawPetal(x, y, size, rotation, opacity) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rotation);
+    ctx.globalAlpha = opacity;
+
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.bezierCurveTo(
+      size * 0.5, -size * 0.5,
+      size, -size * 0.2,
+      size * 0.8, size * 0.3
+    );
+    ctx.bezierCurveTo(
+      size * 0.6, size * 0.8,
+      size * 0.1, size * 0.6,
+      0, 0
+    );
+
+    const gradient = ctx.createRadialGradient(
+      size * 0.3, 0, 0,
+      size * 0.3, 0, size
+    );
+    gradient.addColorStop(0, "rgb(29, 29, 29)");
+    gradient.addColorStop(1, "rgb(87, 87, 87)");
+
+    ctx.fillStyle = gradient;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach((p) => {
+      p.sway += p.swaySpeed;
+      p.x += Math.sin(p.sway) * 0.5 + p.speedX;
+      p.y += p.speedY;
+      p.rotation += p.rotationSpeed;
+
+      drawPetal(p.x, p.y, p.size, p.rotation, p.opacity);
+
+      if (p.y > canvas.height + 20) {
+        p.y = -20;
+        p.x = Math.random() * canvas.width;
+      }
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+}
