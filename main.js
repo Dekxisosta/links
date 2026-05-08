@@ -98,7 +98,7 @@ function buildHero() {
 
   const name = document.createElement("h1");
   name.className = "hero-name";
-  name.textContent = "Dekxisosta";
+  name.textContent = "Dekxi";
 
   const handle = document.createElement("p");
   handle.className = "hero-handle";
