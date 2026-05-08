@@ -280,6 +280,7 @@ body::after {
   font-weight: 300;
   color: var(--text-secondary);
   margin-top: 1px;
+  word-break: break-all;
   overflow-wrap: break-word;
 }
 
