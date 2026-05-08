@@ -2,7 +2,7 @@ const links = [
   {
     icon: "https://images.icon-icons.com/2429/PNG/512/linkedin_logo_icon_147268.png",
     label: "LinkedIn",
-    sub: "surprise legal name drop",
+    sub: "professional account",
     href: "https://www.linkedin.com/in/nel-xedrik-ariscon-9b7a40387/",
   },
   {
@@ -79,7 +79,7 @@ function buildHeader() {
 
   const bow = document.createElement("img");
   bow.className = "bow-decor";
-  bow.src = "https://cdn.shopify.com/s/files/1/0631/1341/files/black_satin_silk_bow_ties_600x600.png?v=1678661330";
+  bow.src = "https://www.nicepng.com/png/full/2-29490_black-rose-png-black-rose.png";
   document.querySelector(".container-main").appendChild(bow);
 
   const flower = document.createElement("img")
