@@ -67,6 +67,8 @@ function buildHeader() {
   avatar.className = "avatar";
   avatar.src = "https://avatars.githubusercontent.com/u/201718391?v=4";
 
+
+
   wrap.appendChild(avatar);
   header.appendChild(banner);
   header.appendChild(wrap);
@@ -74,6 +76,17 @@ function buildHeader() {
   wrap.style.opacity = "0";
   wrap.style.transform = "scale(0.85)";
   wrap.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+
+  const bow = document.createElement("img");
+  bow.className = "bow-decor";
+  bow.src = "https://cdn.shopify.com/s/files/1/0631/1341/files/black_satin_silk_bow_ties_600x600.png?v=1678661330";
+  document.querySelector(".container-main").appendChild(bow);
+
+  const flower = document.createElement("img")
+  flower.className = "flower-decor";
+  flower.src = "https://www.nicepng.com/png/full/2-29490_black-rose-png-black-rose.png";
+  document.querySelector(".container-main").appendChild(flower);
+
   requestAnimationFrame(() => {
     wrap.style.opacity = "1";
     wrap.style.transform = "scale(1)";
@@ -126,7 +139,7 @@ function buildLinks() {
   });
 }
 function buildProfileLinks() {
-  const content = document.querySelector(".content");
+  const content = document.querySelector(".profile-links");
 
   const section = document.createElement("div");
   section.className = "profile-links";
