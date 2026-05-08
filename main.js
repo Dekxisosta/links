@@ -2,7 +2,7 @@ const links = [
   {
     icon: "https://images.icon-icons.com/2429/PNG/512/linkedin_logo_icon_147268.png",
     label: "LinkedIn",
-    sub: "tis but a fancy display of competence",
+    sub: "surprise legal name drop",
     href: "https://www.linkedin.com/in/nel-xedrik-ariscon-9b7a40387/",
   },
   {
