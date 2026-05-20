@@ -270,18 +270,6 @@ body::after {
   gap: 2px;
 }
 
-.content::before {
-  content: 'LINKS';
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  color: var(--text-secondary);
-  padding: 0 4px 8px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 4px;
-}
-
 .link-card {
   display: flex;
   align-items: center;
@@ -325,7 +313,6 @@ body::after {
   transition: height 0.15s ease;
   margin-left: -12px;
   margin-right: -3px;
-  
 }
 
 .link-card:hover::before {
@@ -435,8 +422,6 @@ body::after {
 @media (min-width: 728px) {
   .container-main-decor-fur { padding: 3px; }
   .container-main-decor     { padding: 3px; }
-  .bow-decor   { display: inline; }
-  .flower-decor{ display: inline; }
 }
 
 /* ── PARTICLES ── */
@@ -598,12 +583,8 @@ body::after {
 
 @media (max-width: 480px) {
   .content-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
-}
-
-.content::before {
-  grid-column: span 2;
 }
 
 .clockwise-tracker {
