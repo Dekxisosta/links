@@ -178,7 +178,8 @@ body::after {
   position: relative;
   width: 88px;
   height: 88px;
-  flex-shrink: 0;        /* Protects avatar from squeezing on any screen size */
+  flex-shrink: 0;
+  margin-bottom: 16px;
 }
 
 .avatar {
@@ -186,7 +187,7 @@ body::after {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--bg); /* Blend border color with content background */
+  border: 3px solid var(--bg);
   display: block;
 }
 
@@ -194,7 +195,7 @@ body::after {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -5%);
   width: 100px;
   height: 100px;
   object-fit: contain;
@@ -220,6 +221,12 @@ body::after {
 }
 .profile-bio-row .hero-bio {
   margin-top: 0px;
+}
+.profile-bio-row .hero-bio {
+  border: 2px dashed var(--border);
+  padding: 2px 5px 5px 5px;
+  border-radius: 12px;
+  text-align: center;
 }
 
 .hero-name {
@@ -281,7 +288,7 @@ body::after {
   gap: 12px;
   padding: 10px 12px;
   background: transparent;
-  border: none;
+  border: 1px solid var(--border);
   border-radius: var(--radius-card);
   text-decoration: none;
   color: var(--text-primary);
@@ -318,6 +325,7 @@ body::after {
   transition: height 0.15s ease;
   margin-left: -12px;
   margin-right: -3px;
+  
 }
 
 .link-card:hover::before {
