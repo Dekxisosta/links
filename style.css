@@ -147,7 +147,6 @@ body::after {
   gap: 0;
   border-radius: var(--radius-card);
   background-color: var(--bg);
-  overflow: hidden;
 }
 
 .main-left {
@@ -158,7 +157,6 @@ body::after {
   padding: 20px;
   min-width: 0;
   position: relative;
-  overflow: hidden;
 }
 
 .main-left::before {
@@ -325,7 +323,7 @@ body::after {
   border-radius: 1px 1px 0 0;
   border: 3px double var(--accent);
   background: url('https://i.pinimg.com/736x/06/4e/4f/064e4f86f687a32dc18de465251fe0b1.jpg') center/cover no-repeat;
-  z-index: 1;
+  z-index: 20;
 }
 
 .profile-meta-row {
@@ -557,7 +555,6 @@ body::after {
 .link-sub {
   font-size: 12px;
   font-weight: 300;
-  color: var(--bg-dark);
   margin-top: 1px;
   word-break: break-all;
   overflow-wrap: break-word;
@@ -568,16 +565,6 @@ body::after {
   color: var(--text-secondary);
   opacity: 0;
   transition: opacity 0.15s ease, color 0.15s ease;
-}
-
-.link-sub:hover{
-  opacity: 1;
-  color: var(--accent);
-}
-
-.link-card:hover .link-arrow {
-  opacity: 1;
-  color: var(--accent);
 }
 
 /* ── PROFILE SOCIAL PILLS ── */
@@ -771,8 +758,8 @@ body::after {
 /* ── CLOCKWISE TRACKER ── */
 .clockwise-tracker {
   position: absolute;
-  width: 42px;
-  height: 42px;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   pointer-events: auto;
   cursor: pointer;
@@ -800,7 +787,7 @@ body::after {
     height: 28px;
     border-radius: var(--radius-card) var(--radius-card) 0 0;
     position: relative;
-    z-index: 10;
+    z-index: 1;
 }
 
 .win-navbar-left {
@@ -930,13 +917,13 @@ body::after {
 }
 
 @keyframes clockwiseRotatorSnap {
-  0%   { top: 0%;   left: 0%;    transform: translate(-21px, -21px) rotate(0deg);   }
-  24%  { top: 0%;   left: 100%;  transform: translate(-21px, -21px) rotate(0deg);   }
-  25%  { top: 0%;   left: 100%;  transform: translate(-21px, -21px) rotate(90deg);  }
+  0%   { top: -25%;   left: -5%;    transform: translate(-21px, -21px) rotate(0deg);   }
+  24%  { top: -25%;   left: 100%;  transform: translate(-21px, -21px) rotate(0deg);   }
+  25%  { top: -25%;   left: 100%;  transform: translate(-21px, -21px) rotate(90deg);  }
   49%  { top: 100%; left: 100%;  transform: translate(-21px, -21px) rotate(90deg);  }
   50%  { top: 100%; left: 100%;  transform: translate(-21px, -21px) rotate(180deg); }
-  74%  { top: 100%; left: 0%;    transform: translate(-21px, -21px) rotate(180deg); }
-  75%  { top: 100%; left: 0%;    transform: translate(-21px, -21px) rotate(270deg); }
-  99%  { top: 0%;   left: 0%;    transform: translate(-21px, -21px) rotate(270deg); }
-  100% { top: 0%;   left: 0%;    transform: translate(-21px, -21px) rotate(360deg); }
+  74%  { top: 100%; left: -5%;    transform: translate(-21px, -21px) rotate(180deg); }
+  75%  { top: 100%; left: -5%;    transform: translate(-21px, -21px) rotate(270deg); }
+  99%  { top: -25%;   left: -5%;    transform: translate(-21px, -21px) rotate(270deg); }
+  100% { top: -25%;   left: -5%;    transform: translate(-21px, -21px) rotate(360deg); }
 }
