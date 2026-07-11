@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             friendProfilePictureLink: "https://avatars.githubusercontent.com/u/162527652?v=4",
             friendCoverLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBBC7RMnAV1Vf71EGiAGEw_42-Uf4UbhtSTNwjTgnG4ehsUJFW1qTeVS4&s=10",
             friendDescription: "arch linux enjoyer through and through. probably ricing his setup right now",
-            friendTags: ["Arch Linux", "Ricing"],
+            friendTags: ["Arch Linux", "Ricing", "Gooner", "67"],
             friendLinks: [
                 { name: "GitHub", url: "https://github.com/SHUBARUUU" }
             ]
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             friendProfilePictureLink: "https://unavatar.io/twitter/KonQuinque",
             friendCoverLink: "https://m.media-amazon.com/images/I/71eDCDeqEIL.jpg",
             friendDescription: "artist, visual communications and design student, based in Mexico",
-            friendTags: ["TADC", "Art"],
+            friendTags: ["Multi-Fandom", "Artist", "Girl Failure"],
             friendLinks: [
                 { name: "Twitter", url: "https://x.com/KonQuinque" },
                 { name: "Carrd", url: "https://kon-q.carrd.co/" }
