@@ -908,6 +908,148 @@ body::after {
     flex-shrink: 0;
     text-decoration: none;
 }
+
+.friends-main {
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+}
+
+.friends-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.friends-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px 6px 4px;
+}
+
+@media (max-width: 900px) {
+  .friends-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .friends-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.friend-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0 0 12px;
+  min-width: 0;
+  background: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.5s ease forwards;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.friend-row:hover {
+  background: var(--card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.friend-row:hover .friend-name,
+.friend-row:hover .friend-desc {
+  color: var(--accent);
+}
+
+.friend-row:hover .friend-tag {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.friend-cover {
+  width: 100%;
+  height: 56px;
+  background-color: var(--accent-dim);
+  background-size: cover;
+  background-position: center;
+  border-bottom: 2px double var(--border);
+  flex-shrink: 0;
+}
+
+.friend-header {
+  display: flex;
+  padding: 0 10px;
+  margin-top: -22px;
+}
+
+.friend-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px ridge var(--accent-light);
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.friend-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 10px 0;
+}
+
+.friend-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--bg);
+  line-height: 1.3;
+  transition: color 0.15s ease;
+}
+
+.friend-desc {
+  font-size: 11.5px;
+  font-weight: 300;
+  color: var(--bg);
+  line-height: 1.5;
+  opacity: 0.85;
+  transition: color 0.15s ease;
+}
+
+.friend-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.friend-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  background: var(--accent-dim);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  color: var(--bg);
+  font-size: 9.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   to {

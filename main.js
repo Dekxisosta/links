@@ -100,6 +100,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
       requestAnimationFrame(animate);
   }
+    const friends = [
+        {
+            friendName: "LYGreen",
+            friendLink: "https://github.com/LYGreen",
+            friendProfilePictureLink: "https://avatars.githubusercontent.com/u/88890606?v=4",
+            friendCoverLink: "https://lygreen.github.io/banner.svg",
+            friendDescription: "cutie based in China, deep in the ML/AI rabbit hole. Certified learning monster",
+            friendTags: ["ML/AI", "China", "Arch Linux"]
+        },
+        {
+            friendName: "SHUBARUUU",
+            friendLink: "https://github.com/SHUBARUUU",
+            friendProfilePictureLink: "https://avatars.githubusercontent.com/u/162527652?v=4",
+            friendCoverLink: "https://i.makeagif.com/media/7-04-2021/BIikv-.gif",
+            friendDescription: "arch linux enjoyer through and through. probably ricing his setup right now",
+            friendTags: ["Arch Linux", "Ricing"]
+        },
+    ];
 
+    function renderFriends(list) {
+        const listEl = document.getElementById("friendsList");
+        if (!listEl) {
+            console.warn("friendsList element not found in DOM");
+            return;
+        }
+
+        listEl.innerHTML = list.map((f, i) => `
+            <a class="friend-row" href="${f.friendLink}" target="_blank" rel="noopener noreferrer" style="animation-delay: ${0.1 + i * 0.05}s;">
+            <div class="friend-cover" style="background-image: url('${f.friendCoverLink || ""}');"></div>
+            <div class="friend-header">
+                <img class="friend-avatar" src="${f.friendProfilePictureLink}" alt="${f.friendName}">
+            </div>
+            <div class="friend-text">
+                <span class="friend-name">${f.friendName}</span>
+                ${f.friendDescription ? `<span class="friend-desc">${f.friendDescription}</span>` : ""}
+                ${f.friendTags && f.friendTags.length ? `
+                <div class="friend-tags">
+                    ${f.friendTags.map(tag => `<span class="friend-tag">${tag}</span>`).join("")}
+                </div>
+                ` : ""}
+            </div>
+            </a>
+        `).join("");
+    }
   animate();
+  renderFriends(friends);
 });
