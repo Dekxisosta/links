@@ -7,13 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
             friendDescription: "cutie based in China, deep in the ML/AI rabbit hole. Certified learning monster",
             friendTags: ["ML/AI", "China", "Arch Linux"],
             friendLinks: [
-                { name: "GitHub", url: "https://github.com/LYGreen" }
+                { name: "GitHub", url: "https://github.com/LYGreen" },
+                { name: "Twitter", url: "https://x.com/LYGreen_lili__"},
+                { name: "Page", url: "https://lygreen.github.io/"},
             ]
         },
         {
             friendName: "SHUBARUUU",
             friendProfilePictureLink: "https://avatars.githubusercontent.com/u/162527652?v=4",
-            friendCoverLink: "https://i.makeagif.com/media/7-04-2021/BIikv-.gif",
+            friendCoverLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBBC7RMnAV1Vf71EGiAGEw_42-Uf4UbhtSTNwjTgnG4ehsUJFW1qTeVS4&s=10",
             friendDescription: "arch linux enjoyer through and through. probably ricing his setup right now",
             friendTags: ["Arch Linux", "Ricing"],
             friendLinks: [
